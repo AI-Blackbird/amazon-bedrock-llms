@@ -1,17 +1,12 @@
-from cat.mad_hatter.decorators import tool, hook, plugin
+from cat.mad_hatter.decorators import hook, plugin
 from cat.factory.llm import LLMSettings
 from cat.plugins.aws_integration import Boto3
 from pydantic import BaseModel, model_validator, Field, create_model, ConfigDict
-from typing import Any, List, Mapping, Optional, Type
+from typing import List, Optional, Type
 from cat.mad_hatter.mad_hatter import MadHatter
 from langchain_aws import BedrockLLM
 from langchain_aws import ChatBedrock
-from datetime import datetime, date
-from collections import defaultdict
-from enum import Enum
 from cat.log import log
-import random
-import re
 import json
 from enum import Enum
 
