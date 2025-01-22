@@ -9,6 +9,8 @@ from langchain_aws import ChatBedrock
 from cat.log import log
 import json
 from enum import Enum
+from collections import defaultdict
+import re
 
 PLUGIN_NAME = "amazon_bedrock_llms"
 DEFAULT_MODEL = "amazon.titan-tg1-large"
