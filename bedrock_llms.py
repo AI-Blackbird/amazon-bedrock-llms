@@ -11,6 +11,7 @@ import json
 from enum import Enum
 from collections import defaultdict
 import re
+from cat.mad_hatter.tweedledum import Tweedledum
 
 PLUGIN_NAME = "amazon_bedrock_llms"
 DEFAULT_MODEL = "amazon.titan-tg1-large"
@@ -222,7 +223,7 @@ def settings_model():
 def factory_pipeline():
     AmazonBedrockLLMSettings = get_settings()
     AmazonBedrockLLMSettings.init_llm()
-    aws_plugin = MadHatter().plugins.get(PLUGIN_NAME)
+    aws_plugin = Tweedledum().plugins.get(PLUGIN_NAME)
     plugin_settings = aws_plugin.load_settings()
     AmazonBedrockLLMSettings(**plugin_settings)
     return AmazonBedrockLLMSettings.get_llms()
