@@ -76,7 +76,7 @@ def create_custom_bedrock_class(class_name, llm_info):
                 "model_id": llm_info[0]["model_arn"],
                 "provider": llm_info[0]["provider_name"].lower(),
                 "streaming": llm_info[0]["response_streaming_supported"],
-                "model_kwargs": json.loads(kwargs.get("model_kwargs", "{}")),
+                "model_kwargs": kwargs.get("model_kwargs", {}),
                 "client": Boto3().get_client("bedrock-runtime"),
             }
             guardrail = kwargs.get("guardrail_id", "None")
